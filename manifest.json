@@ -1,0 +1,21 @@
+{
+    "manifest_version": 3,
+    "name": "Amazon Price Hider",
+    "version": "1.0",
+    "description": "Hides prices on Amazon pages.",
+    "permissions": ["storage"],
+    "action": {
+      "default_popup": "popup.html"
+    },
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["*://www.amazon.com.br/*"],
+        "js": ["content.js"],
+        "run_at": "document_end"
+      }
+    ]
+  }
+  
